@@ -1,16 +1,18 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
+
+	"github.com/go-http-utils/logger"
+	"os"
 )
 
 func main() {
-	http.HandleFunc("/a", handler)
+	mux := http.NewServeMux()
+	mux.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
+		res.Write([]byte("Hello, World"))
+	})
 
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8080", logger.Handler(mux, os.Stdout, logger.DevLoggerType))
 }
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Hello World!")
-}

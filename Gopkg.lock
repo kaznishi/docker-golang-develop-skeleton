@@ -3,13 +3,15 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:3830db69d1ddb5974fee06b6f657b2084de719a6b345aa24e6e84c8ab74f4838"
   name = "github.com/go-http-utils/logger"
   packages = ["."]
+  pruneopts = "UT"
   revision = "f3a42dcdeae6e445c9e986b7fda289d98db10414"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "937bb86e206051a3efb33b50ef60ce38bbf3117b146cb821b1bebd351c70ad74"
+  input-imports = ["github.com/go-http-utils/logger"]
   solver-name = "gps-cdcl"
   solver-version = 1

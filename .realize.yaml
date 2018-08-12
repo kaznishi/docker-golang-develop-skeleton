@@ -5,10 +5,14 @@ settings:
 schema:
 - name: docker-golang-develop-skeleton
   path: .
-  commands: {}
+  commands:
+    run:
+      status: true
   watcher:
     extensions:
     - go
+    - html
+    - yaml
     paths:
     - /
     ignored_paths:
